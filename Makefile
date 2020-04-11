@@ -11,7 +11,7 @@ install_galaxy_roles:
 	ansible-galaxy install -r requirements.yml
 
 install_homebrew:
-	ansible-playbook main.yml -i inventory --tags "homebrew"
+	ansible-playbook playbook.yml -i inventory --tags "homebrew"
 
 clean:
 	ansible-galaxy remove geerlingguy.homebrew
