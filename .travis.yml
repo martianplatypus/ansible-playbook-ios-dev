@@ -6,7 +6,9 @@ jobs:
       os: osx
       osx_image: xcode10.1
       language: minimal
-      env: ANSIBLE_VERSION='<2.9.0'
+      env:
+        - ANSIBLE_VERSION='<2.9.0'
+        - VENV_PATH="${HOME}/.venv"
 
 before_install:
   # Install pip
@@ -17,8 +19,8 @@ before_install:
   # Setup virtualenv
   - sudo -H pip install -U virtualenv --ignore-installed six
   - virtualenv --version
-  - virtualenv .venv
-  - source .venv/bin/activate
+  - virtualenv ${VENV_PATH}
+  - source ${VENV_PATH}/bin/activate
 
 install:
   # Dependencies
@@ -35,7 +37,7 @@ install:
 
 script:
   # lint
-  - yamllint .
+  - yamllint ${TRAVIS_BUILD_DIR}/.
   - ansible-lint
 
   # Basic role syntax check
