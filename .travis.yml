@@ -1,14 +1,9 @@
 ---
 sudo: required
-language: generic
-
-matrix:
+jobs:
   include:
-    # Mojave (Latest)
-    - os: osx
-      osx_image: xcode11.3
-    # High Sierra
-    - os: osx
+    - name: High Sierra
+      os: osx
       osx_image: xcode10.1
       language: minimal
       env:
