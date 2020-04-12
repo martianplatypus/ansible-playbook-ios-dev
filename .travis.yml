@@ -8,7 +8,7 @@ jobs:
       language: minimal
       env:
         - ANSIBLE_VERSION='<2.9.0'
-        - VENV_PATH="${HOME}/.venv"
+        - VENV_PATH="$HOME/.venv"
 
 before_install:
   # Install pip
@@ -41,4 +41,4 @@ script:
 
   # Run playbook
   - make install
-  - rvm list  
+  - rvm list
