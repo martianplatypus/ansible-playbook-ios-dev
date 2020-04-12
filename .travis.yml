@@ -39,10 +39,6 @@ script:
   - yamllint ${TRAVIS_BUILD_DIR}/.
   - ansible-lint
 
-  # Basic role syntax check
-  - ansible-playbook playbook.yml -i inventory --syntax-check
-  - ansible-playbook playbook.yml -i inventory --check
-
   # Run playbook
   - make install
-  - rvm list
+  - rvm list  
