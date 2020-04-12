@@ -27,7 +27,6 @@ install:
   - >-
     pip install "ansible${ANSIBLE_VERSION}"
     ansible-lint
-    testinfra
     yamllint
 
   # Check versions
@@ -43,3 +42,7 @@ script:
   # Basic role syntax check
   - ansible-playbook playbook.yml -i inventory --syntax-check
   - ansible-playbook playbook.yml -i inventory --check
+
+  # Run playbook
+  - make install
+  - rvm list

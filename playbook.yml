@@ -1,3 +1,8 @@
 ---
 - hosts: localhost
   connection: local
+  roles:
+    - role: geerlingguy.homebrew
+      tags: [homebrew]
+    - role: martianplatypus.ruby_mac
+      tags: [ruby, rvm]
