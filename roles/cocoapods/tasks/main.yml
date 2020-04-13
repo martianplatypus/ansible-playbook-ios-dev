@@ -1,0 +1,4 @@
+---
+- name: Install Cocoapods
+  gem:
+    name: cocoapods
