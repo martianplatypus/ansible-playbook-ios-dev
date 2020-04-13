@@ -32,7 +32,7 @@ install:
 
 script:
   # lint
-  - yamllint TRAVIS_BUILD_DIR/
+  - yamllint $TRAVIS_BUILD_DIR/
   - ansible-lint
 
   # Run playbook
