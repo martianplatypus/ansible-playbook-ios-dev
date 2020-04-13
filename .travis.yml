@@ -7,38 +7,41 @@ jobs:
       language: shell
       env:
         global:
-        - VENV_PATH=$HOME/.venv
+          - VENV_PATH=$HOME/.venv
 
-before_install:
-  # Install pip
-  - curl https://bootstrap.pypa.io/get-pip.py | sudo -H /usr/bin/python
-  - which pip
-  - pip --version
-
-  # Setup virtualenv
-  - sudo -H pip install -U virtualenv --ignore-installed six
-  - virtualenv --version
-  - echo VENV_PATH
-  - virtualenv VENV_PATH
-  - source VENV_PATH/bin/activate
-
-install:
-  # Dependencies
-  - >-
-    pip install ansible
-    ansible-lint
-    yamllint
-
-  # Check versions
-  - ansible --version
-  - ansible-lint --version
-  - yamllint --version
+# before_install:
+#   # Install pip
+#   - curl https://bootstrap.pypa.io/get-pip.py | sudo -H /usr/bin/python
+#   - which pip
+#   - pip --version
+#
+#   # Setup virtualenv
+#   - sudo -H pip install -U virtualenv --ignore-installed six
+#   - virtualenv --version
+#   - echo VENV_PATH
+#   - virtualenv VENV_PATH
+#   - source VENV_PATH/bin/activate
+#
+# install:
+#   # Dependencies
+#   - >-
+#     pip install ansible
+#     ansible-lint
+#     yamllint
+#
+#   # Check versions
+#   - ansible --version
+#   - ansible-lint --version
+#   - yamllint --version
 
 script:
-  # lint
-  - yamllint $TRAVIS_BUILD_DIR/.
-  - ansible-lint
-
-  # Run playbook
-  - make install
-  - rvm list
+  - echo HOME
+  - echo $HOME
+  - echo ${HOME}
+  # # lint
+  # - yamllint TRAVIS_BUILD_DIR/
+  # - ansible-lint
+  #
+  # # Run playbook
+  # - make install
+  # - rvm list
