@@ -35,9 +35,9 @@ jobs:
 #   - yamllint --version
 
 script:
-  - echo HOME
-  - echo $HOME
-  - echo ${HOME}
+  - echo VENV_PATH
+  - echo $VENV_PATH
+  - echo ${VENV_PATH}
   # # lint
   # - yamllint TRAVIS_BUILD_DIR/
   # - ansible-lint
