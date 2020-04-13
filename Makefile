@@ -16,7 +16,7 @@ install_homebrew:
 	ansible-playbook playbook.yml -i inventory --tags "homebrew"
 
 install_ruby:
-	ansible-playbook playbook.yml -i inventory --tags "ruby"
+	ansible-playbook playbook.yml -i inventory --tags "ruby" --extra-vars "ci_running=true"
 
 clean:
 	ansible-galaxy remove geerlingguy.homebrew
