@@ -18,9 +18,9 @@ before_install:
   # Setup virtualenv
   - sudo -H pip install -U virtualenv --ignore-installed six
   - virtualenv --version
-  - echo $VENV_PATH
-  - virtualenv $VENV_PATH
-  - source $VENV_PATH/bin/activate
+  - echo VENV_PATH
+  - virtualenv VENV_PATH
+  - source VENV_PATH/bin/activate
 
 install:
   # Dependencies
