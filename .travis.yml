@@ -1,14 +1,10 @@
 ---
-sudo: required
 jobs:
   include:
     - name: High Sierra
       os: osx
       osx_image: xcode10.1
-      language: minimal
-      env:
-        - ANSIBLE_VERSION='<2.9.0'
-        - VENV_PATH="${HOME}/.venv"
+      language: shell
 
 before_install:
   # Install pip
@@ -19,13 +15,13 @@ before_install:
   # Setup virtualenv
   - sudo -H pip install -U virtualenv --ignore-installed six
   - virtualenv --version
-  - virtualenv ${VENV_PATH}
-  - source ${VENV_PATH}/bin/activate
+  - virtualenv ~/.venv
+  - source ~/.venv/bin/activate
 
 install:
   # Dependencies
   - >-
-    pip install "ansible${ANSIBLE_VERSION}"
+    pip install ansible
     ansible-lint
     yamllint
 
@@ -36,11 +32,9 @@ install:
 
 script:
   # lint
-  - yamllint ${TRAVIS_BUILD_DIR}/.
+  - yamllint $TRAVIS_BUILD_DIR/
   - ansible-lint
 
+  # Run playbook
   - make install
-
-  # Basic role syntax check
-  - ansible-playbook playbook.yml -i inventory --syntax-check
-  - ansible-playbook playbook.yml -i inventory --check
+  - rvm list
