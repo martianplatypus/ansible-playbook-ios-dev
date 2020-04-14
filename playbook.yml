@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   connection: local
+  vars_files:
+    - vars/homebrew.yml
   roles:
     - role: geerlingguy.homebrew
       tags: [homebrew]
     - role: martianplatypus.ruby_mac
       tags: [ruby, rvm]
-    - role: cocoapods
-      tags: [dependency-manager, cocoapods]

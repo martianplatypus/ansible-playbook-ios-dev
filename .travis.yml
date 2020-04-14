@@ -37,4 +37,8 @@ script:
 
   # Run playbook
   - make install
+
+  # Check configuration
   - rvm list
+  - pod --version
+  - swiftlint version
