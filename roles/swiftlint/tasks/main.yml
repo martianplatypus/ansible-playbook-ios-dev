@@ -1,4 +1,4 @@
 ---
 - name: Install Swiftlint
-  gem:
+  homebrew:
     name: swiftlint
