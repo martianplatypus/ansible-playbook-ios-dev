@@ -40,5 +40,5 @@ script:
 
   # Check configuration
   - rvm list
-  - pods --version
-  - swiftlint --version
+  - pod --version
+  - swiftlint version
