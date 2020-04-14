@@ -3,13 +3,15 @@
 	install_galaxy_roles \
 	install_homebrew \
 	install_ruby \
-	install_cocoapods
+	install_cocoapods \
+	install_swiftlint
 
 install: \
 	install_galaxy_roles \
 	install_homebrew \
 	install_ruby \
-	install_cocoapods
+	install_cocoapods \
+	install_swiftlint
 
 install_galaxy_roles:
 	ansible-galaxy install -r requirements.yml
@@ -22,6 +24,9 @@ install_ruby:
 
 install_cocoapods:
 	ansible-playbook playbook.yml -i inventory --tags "cocoapods"
+
+install_swiftlint:
+	ansible-playbook playbook.yml -i inventory --tags "swiftlint"
 
 clean:
 	ansible-galaxy remove geerlingguy.homebrew

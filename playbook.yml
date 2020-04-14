@@ -8,3 +8,5 @@
       tags: [ruby, rvm]
     - role: cocoapods
       tags: [dependency-manager, cocoapods]
+    - role: swiftlint
+      tags: [lint, swiftlint]
