@@ -1,3 +1,4 @@
 ---
 ruby_gems:
+  - bundler
   - cocoapods

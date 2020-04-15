@@ -39,6 +39,7 @@ script:
   - make install
 
   # Check configuration
-  - rvm list
+  - bundle version
   - pod --version
+  - rvm list
   - swiftlint version
