@@ -42,7 +42,9 @@ script:
   - carthage version
   - fastlane --version
   - pod --version
+  - rome --version
   - rvm list
   - swiftlint version
   - source ~/.bashrc
+  
   - echo $LC_ALL
