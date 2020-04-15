@@ -40,6 +40,9 @@ script:
 
   # Check configuration
   - bundle version
+  - bundle exec fastlane --version
   - pod --version
   - rvm list
   - swiftlint version
+  - source ~/.bashrc
+  - echo $LC_ALL

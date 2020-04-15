@@ -1,0 +1,24 @@
+---
+- name: Check bashrc exists
+  stat:
+    path: "{{ profile_path }}"
+  register: bashrc_stat
+
+- name: Create .bashrc
+  file:
+    path: "{{ profile_path }}"
+    state: touch
+    mode: u+rw
+  register: bashrc_touch_result
+  when: not ansible_check_mode
+  changed_when: bashrc_stat.stat is defined and not bashrc_stat.stat.exists
+
+- name: Set locale in bashrc
+  lineinfile:
+    path: "{{ profile_path }}"
+    line: "{{ item }}"
+  with_items:
+    - "export LC_ALL=en_US.UTF-8"
+    - "export LANG=en_US.UTF-8"
+  register: set_locale_result
+  when: not ansible_check_mode

@@ -8,3 +8,5 @@
       tags: [homebrew]
     - role: martianplatypus.ruby_mac
       tags: [ruby, rvm]
+    - role: fastlane
+      tags: [fastlane]
