@@ -39,6 +39,7 @@ script:
   - make install
 
   # Check configuration
+  - carthage version
   - fastlane --version
   - pod --version
   - rvm list
