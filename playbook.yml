@@ -10,3 +10,5 @@
       tags: [ruby, rvm]
     - role: fastlane
       tags: [fastlane]
+    - role: rome
+      tags: [rome]
