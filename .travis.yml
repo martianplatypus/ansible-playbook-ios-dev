@@ -39,6 +39,9 @@ script:
   - make install
 
   # Check configuration
-  - rvm list
+  - fastlane --version
   - pod --version
+  - rvm list
   - swiftlint version
+  - source ~/.bashrc
+  - echo $LC_ALL
