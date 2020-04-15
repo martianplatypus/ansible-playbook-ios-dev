@@ -39,8 +39,7 @@ script:
   - make install
 
   # Check configuration
-  - bundle version
-  - bundle exec fastlane --version
+  - fastlane --version
   - pod --version
   - rvm list
   - swiftlint version
