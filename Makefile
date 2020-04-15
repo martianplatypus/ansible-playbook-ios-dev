@@ -10,7 +10,7 @@ install: \
 	install_galaxy_roles \
 	install_homebrew \
 	install_ruby \
-	install_fastlane
+	install_fastlane \
 	install_rome
 
 install_galaxy_roles:
