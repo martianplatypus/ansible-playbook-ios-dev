@@ -1,3 +1,4 @@
 ---
 - src: geerlingguy.homebrew
+- src: geerlingguy.mas
 - src: martianplatypus.ruby_mac
