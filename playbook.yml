@@ -3,6 +3,8 @@
   connection: local
   vars_files:
     - vars/homebrew.yml
+    - vars/gems.yml
+    - vars/mas.yml
   roles:
     - role: geerlingguy.homebrew
       tags: [homebrew]
@@ -12,3 +14,7 @@
       tags: [fastlane]
     - role: rome
       tags: [rome]
+    - role: geerlingguy.mas
+      tags: [mas]
+    - role: xcode
+      tags: [xcode]
