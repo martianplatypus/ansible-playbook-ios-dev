@@ -18,3 +18,5 @@
       tags: [mas]
     - role: xcode
       tags: [xcode]
+    - role: swiftlint
+      tags: [swiftlint]
