@@ -36,7 +36,7 @@ script:
   - ansible-lint
 
   # Run playbook
-  - make install
+  - make install ARGS='--extra-vars "ci_running=true"'
 
   # Check configuration
   - carthage version
