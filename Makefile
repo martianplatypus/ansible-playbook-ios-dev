@@ -18,28 +18,28 @@ install_galaxy_roles:
 	ansible-galaxy install -r requirements.yml
 
 install_all:
-	ansible-playbook playbook.yml -i inventory --extra-vars "ci_running=true"
+	ansible-playbook playbook.yml -i inventory $(ARGS)
 
 install_homebrew:
-	ansible-playbook playbook.yml -i inventory --tags "homebrew"
+	ansible-playbook playbook.yml -i inventory --tags "homebrew" $(ARGS)
 
 install_ruby:
-	ansible-playbook playbook.yml -i inventory --tags "ruby" --extra-vars "ci_running=true"
+	ansible-playbook playbook.yml -i inventory --tags "ruby" $(ARGS)
 
 install_fastlane:
-	ansible-playbook playbook.yml -i inventory --tags "fastlane"
+	ansible-playbook playbook.yml -i inventory --tags "fastlane" $(ARGS)
 
 install_rome:
-	ansible-playbook playbook.yml -i inventory --tags "rome"
+	ansible-playbook playbook.yml -i inventory --tags "rome" $(ARGS)
 
 install_mas:
-	ansible-playbook playbook.yml -i inventory --tags "mas"
+	ansible-playbook playbook.yml -i inventory --tags "mas" $(ARGS)
 
 install_xcode:
-	ansible-playbook playbook.yml -i inventory --tags "xcode"
+	ansible-playbook playbook.yml -i inventory --tags "xcode" $(ARGS)
 
 install_swiftlint:
-	ansible-playbook playbook.yml -i inventory --tags "swiftlint"
+	ansible-playbook playbook.yml -i inventory --tags "swiftlint" $(ARGS)
 
 clean:
 	ansible-galaxy remove geerlingguy.homebrew
