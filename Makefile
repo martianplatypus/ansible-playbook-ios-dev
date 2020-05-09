@@ -18,7 +18,7 @@ install_galaxy_roles:
 	ansible-galaxy install -r requirements.yml
 
 install_all:
-	ansible-playbook playbook.yml -i inventory --ask-become-pass $(ARGS)
+	ansible-playbook playbook.yml -i inventory $(ARGS)
 
 install_homebrew:
 	ansible-playbook playbook.yml -i inventory --tags "homebrew" $(ARGS)
